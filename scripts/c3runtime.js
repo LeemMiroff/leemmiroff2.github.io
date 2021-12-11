@@ -4430,10 +4430,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Audio.Acts.SetSilent,
 		C3.Plugins.System.Acts.SetObjectTimescale,
 		C3.Behaviors.Pin.Acts.PinByImagePoint,
-		C3.Plugins.Touch.Cnds.IsTouchingObject,
 		C3.Plugins.System.Cnds.TriggerOnce,
 		C3.Plugins.System.Acts.SetTimescale,
-		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.Sprite.Cnds.IsBoolInstanceVarSet,
 		C3.Behaviors.EightDir.Cnds.IsMoving,
 		C3.Plugins.Sprite.Acts.SetAnim,
@@ -4474,6 +4472,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Touch.Cnds.OnTapGestureObject,
 		C3.Plugins.System.Acts.RestartLayout,
 		C3.Plugins.VKBridge.Acts.ShowWall,
+		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.Sprite.Cnds.IsMirrored,
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.Text.Cnds.IsVisible,
@@ -4481,13 +4480,15 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.VKBridge.Acts.BridgeConnect,
 		C3.Plugins.VKBridge.Cnds.BridgeConnectSuccess,
 		C3.Plugins.VKBridge.Acts.Authorization,
-		C3.Plugins.VKBridge.Cnds.AuthorizationSuccess
+		C3.Plugins.VKBridge.Cnds.AuthorizationSuccess,
+		C3.Plugins.System.Acts.AddVar
 	];
 };
 self.C3_JsPropNameTable = [
 	{bg: 0},
 	{player_dead2: 0},
 	{dead_gg: 0},
+	{finished: 0},
 	{"8Direction": 0},
 	{ScrollTo: 0},
 	{player: 0},
@@ -4510,7 +4511,6 @@ self.C3_JsPropNameTable = [
 	{Fade: 0},
 	{fade: 0},
 	{finish_for_npc: 0},
-	{play: 0},
 	{holdtorunn: 0},
 	{retry_rip: 0},
 	{Sprite2: 0},
@@ -4524,7 +4524,8 @@ self.C3_JsPropNameTable = [
 	{Sprite7: 0},
 	{best_score: 0},
 	{score: 0},
-	{current_zoom: 0}
+	{current_zoom: 0},
+	{adtimer: 0}
 ];
 }
 
@@ -4648,7 +4649,8 @@ self.C3_ExpressionFuncs = [
 		() => 536,
 		() => 286,
 		() => 40,
-		() => 20,
+		() => 1.5,
+		() => 150,
 		() => "look_right",
 		p => {
 			const n0 = p._GetNode(0);
@@ -4718,10 +4720,10 @@ self.C3_ExpressionFuncs = [
 		},
 		() => "gunshot",
 		() => -8,
-		() => "Я добрался до финиша - это было нелегко!",
+		() => "Это было непросто! :D",
 		() => "https://vk.com/app7991598",
 		() => 360,
-		() => 140,
+		() => 55,
 		() => 226,
 		() => 300,
 		() => "ZooM",
