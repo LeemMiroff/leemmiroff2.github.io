@@ -4442,7 +4442,6 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Cnds.IsAnimPlaying,
 		C3.Plugins.Sprite.Cnds.CompareFrame,
 		C3.Behaviors.EightDir.Cnds.CompareSpeed,
-		C3.Plugins.Audio.Acts.PlayByName,
 		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.System.Exps.choose,
 		C3.Plugins.Sprite.Acts.SetBoolInstanceVar,
@@ -4469,6 +4468,7 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
 		C3.Plugins.Sprite.Exps.AnimationFrame,
 		C3.Plugins.Sprite.Cnds.IsOverlapping,
+		C3.Plugins.Audio.Acts.PlayByName,
 		C3.Plugins.System.Cnds.PickRandom,
 		C3.Behaviors.EightDir.Acts.SetEnabled,
 		C3.Plugins.Touch.Cnds.OnTapGestureObject,
@@ -4523,6 +4523,7 @@ self.C3_JsPropNameTable = [
 	{best_score: 0},
 	{score: 0},
 	{current_zoom: 0},
+	{adtimerlite: 0},
 	{adtimer: 0}
 ];
 }
@@ -4636,19 +4637,19 @@ self.C3_ExpressionFuncs = [
 		() => "idle",
 		() => "look_left",
 		() => 16,
-		() => "beep4",
-		() => "",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0(0.8, 1.1, 1.3);
 		},
 		() => "dead",
 		() => -5,
+		() => "",
 		() => 536,
 		() => 286,
 		() => 40,
-		() => 1.5,
 		() => 150,
+		() => 1.5,
+		() => 240,
 		() => "look_right",
 		p => {
 			const n0 = p._GetNode(0);
@@ -4708,7 +4709,6 @@ self.C3_ExpressionFuncs = [
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0(10, 15, 20, 25, 30, 30, 30, 35, 35);
 		},
-		() => "beep1",
 		() => 0.6,
 		() => "noview",
 		() => "view",
