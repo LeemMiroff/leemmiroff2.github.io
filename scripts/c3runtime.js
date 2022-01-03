@@ -4449,6 +4449,8 @@ self.C3_GetObjectRefTable = function () {
 		C3.Plugins.VKBridge.Cnds.BridgeConnectSuccess,
 		C3.Plugins.VKBridge.Acts.Authorization,
 		C3.Plugins.VKBridge.Cnds.AuthorizationSuccess,
+		C3.Plugins.VKBridge.Acts.UserGet,
+		C3.Plugins.VKBridge.Exps.UserID,
 		C3.Plugins.System.Acts.AddVar
 	];
 };
@@ -4693,7 +4695,12 @@ self.C3_ExpressionFuncs = [
 		() => 300,
 		() => "ZooM",
 		() => 0.01,
-		() => 0.1
+		() => 0.1,
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => f0();
+		},
+		() => "friends"
 ];
 
 
